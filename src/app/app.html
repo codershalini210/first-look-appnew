@@ -5,7 +5,17 @@
   <p> lorem ipsum dummy text lorem ipsum dummy text lorem ipsum dummy text lorem ipsum dummy text lorem ipsum dummy text lorem ipsum dummy text lorem ipsum dummy text lorem ipsum dummy text lorem ipsum dummy text lorem ipsum dummy text lorem ipsum dummy text 
     <app-city-card></app-city-card>
 </main> -->
-<app-demo [username]="username" (sendMessage)="receiveMessage($event)"></app-demo>
+<app-demo [username]="username"
+ (sendMessage)="receiveMessage($event)"></app-demo>
 <p>MEssage from child :{{message}}</p>
-<app-greeting-card  *ngFor="let p of people" [personName]="p.name" [personCity]="p.city"></app-greeting-card>
+<h1>Selected Person : {{selectedPerson}}
+  <div class="flex">
+<app-greeting-card (personSelected) ="setSelected($event)"
+  *ngFor="let p of people" [personName]="p.name" [personCity]="p.city"></app-greeting-card>
+  </div>
 <router-outlet />
+<!-- selectedPerson :string = ''
+ setSelected(name:string)
+ {
+  this.selectedPerson = name
+ } -->

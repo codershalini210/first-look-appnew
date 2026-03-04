@@ -16,6 +16,12 @@ interface people{
   styleUrl: './app.css'
 })
 export class App {
+  selectedPerson :string = ''
+ setSelected(name:string)
+ {
+  this.selectedPerson = name
+ }
+ 
   message=''
   receiveMessage(data:string){
     this.message = data

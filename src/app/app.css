@@ -13,5 +13,10 @@ footer
     text-align: center;
     background-color:purple;
     color:white;
-
+}
+.flex
+{
+    display:flex;
+    justify-content:center;
+    align-items: center;
 }
